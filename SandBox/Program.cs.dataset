@@ -1,0 +1,127 @@
+﻿using Newtonsoft.Json;
+using SevenZip;
+using System;
+using System.Data;
+using System.IO;
+using System.IO.Compression;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Xml.Serialization;
+using CompressionMode = System.IO.Compression.CompressionMode;
+
+namespace SandBox
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var sevenZpath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), Environment.Is64BitProcess ? "x64" : "x86", "7z.dll");
+            SevenZipBase.SetLibraryPath(sevenZpath);
+
+            using(TestDS ds = new TestDS())
+            {
+                foreach(var x in Enumerable.Range(1, 500 * 1000))
+                {
+                    var row1 = ds.TestTable.NewTestTableRow();
+                    row1.Id = x;
+                    row1.Name = Guid.NewGuid().ToString();
+                    ds.TestTable.AddTestTableRow(row1);
+                }
+
+                //byte[] bytes = SerializeDataSet(ds);
+                //TestDS ds2 = DeserializeDataSet<TestDS>(bytes);
+
+                //byte[] gzipCompressed = null;
+                //decimal gzipRatio = 0;
+
+                //using (Stream stringStream = SerializeDataSetWithDataContractSerializer(ds))
+                //using(MemoryStream ms = new MemoryStream())
+                //using (GZipStream zipStream = new GZipStream(ms, CompressionMode.Compress, false))
+                //{
+                //    stringStream.CopyTo(zipStream);
+                //    gzipCompressed = ms.ToArray();
+                //    gzipRatio = (decimal)gzipCompressed.Count() / (decimal)stringStream.Length * 100;
+                //}
+
+
+                byte[] sevenZipCompressed = null;
+                decimal sevenZipRatio = 0;
+
+                using (Stream stringStream = SerializeDataSetWithDataContractSerializer(ds))
+                using (MemoryStream resultStream = new MemoryStream())
+                {
+                    SevenZipCompressor compressor =
+                        new SevenZipCompressor
+                        {
+                            CompressionMethod = CompressionMethod.Lzma2,
+                            CompressionLevel = SevenZip.CompressionLevel.Fast,
+                            
+                        };
+
+                    compressor.CompressStream(stringStream, resultStream);
+                    sevenZipCompressed = resultStream.ToArray();
+                    sevenZipRatio = sevenZipCompressed.Count() / (decimal)stringStream.Length * 100;
+                }
+
+                int end = 0;
+            }
+        }
+
+        static byte[] SerializeDataSet<T>(T ds)
+            where T : DataSet
+        {
+            using (Stream stringStream = SerializeDataSetWithDataContractSerializer(ds))
+            using (MemoryStream resultStream = new MemoryStream())
+            {
+                SevenZipCompressor compressor =
+                    new SevenZipCompressor
+                    {
+                        CompressionMethod = CompressionMethod.Lzma2,
+                        CompressionLevel = SevenZip.CompressionLevel.Normal
+                    };
+
+                compressor.CompressStream(stringStream, resultStream);
+                byte[] byteArray = resultStream.ToArray();
+                return byteArray;
+            }
+        }
+
+        static T DeserializeDataSet<T>(byte[] bytes)
+            where T : DataSet, new()
+        {
+            using (MemoryStream inputStream = new MemoryStream(bytes))
+            using (MemoryStream outputStream = new MemoryStream())
+            {
+                SevenZipExtractor extractor = new SevenZipExtractor(inputStream);
+                extractor.ExtractFile(0, outputStream);
+                outputStream.Position = 0;
+
+                byte[] b = outputStream.ToArray();
+                string xml = Encoding.UTF8.GetString(b);
+
+                T dataSet = DeserializeDataSetWithDataContractSerializer<T>(outputStream);
+                return dataSet;
+            }
+        }
+
+        static Stream SerializeDataSetWithDataContractSerializer<T>(T dataSet)
+            where T : DataSet
+        {
+            MemoryStream ms = new MemoryStream();
+            DataContractSerializer ser = new DataContractSerializer(typeof(TestDS));
+            ser.WriteObject(ms, dataSet);
+            ms.Position = 0;
+            return ms;
+        }
+
+        static T DeserializeDataSetWithDataContractSerializer<T>(Stream stream)
+            where T : DataSet
+        {
+            DataContractSerializer ser = new DataContractSerializer(typeof(T));
+            T dataSet = (T)ser.ReadObject(stream);
+            return dataSet;
+        }
+    }
+}
