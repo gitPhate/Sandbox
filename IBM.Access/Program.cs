@@ -1,6 +1,8 @@
 ﻿using IBM.Data.DB2.iSeries;
 using System;
+using System.Configuration;
 using System.Data;
+using System.IO;
 
 namespace IBM.Access
 {
@@ -8,20 +10,16 @@ namespace IBM.Access
     {
         static void Main(string[] args)
         {
-            if(args.Length < 1)
-            {
-                throw new Exception("Specify EMEA server name");
-            }
-
             DataTable dt = new DataTable();
 
-            using (iDB2Connection conn = new iDB2Connection($"Data Source={args[0]}.emea.guccigroup.dom;Persist Security Info=True;User Id=KKMIRROR;Password=DBMR21K3;"))
+            using (iDB2Connection conn = new iDB2Connection(ConfigurationManager.ConnectionStrings["AS400"]?.ConnectionString))
             {
                 conn.Open();
 
+                string query = File.ReadAllText(ConfigurationManager.AppSettings["QueryFilePath"]);
                 using (iDB2Command cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = "select * from ST3IMPRE.RECAU5FF";
+                    cmd.CommandText = query;
 
                     using (iDB2DataAdapter da = new iDB2DataAdapter(cmd))
                     {

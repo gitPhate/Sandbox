@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1082
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaStudy", "KafkaStudy\KafkaStudy.csproj", "{E73EB28C-4F86-43D7-82A3-34A0F617E35A}"
 EndProject
@@ -9,7 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBM.Access", "IBM.Access\IB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbedioTest", "EmbedioTest\EmbedioTest.csproj", "{78D4B960-2822-4EDB-8862-1B5DE41AFADF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandBox", "SandBox\SandBox.csproj", "{3FBE734B-FF7C-4F2C-BEAF-A497BB5DB059}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thumbnail", "Thumbnail\Thumbnail.csproj", "{B23E8B5D-35FD-4197-8E60-6350AD4DCB89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LdapTest", "LdapTest\LdapTest.csproj", "{BEEF2BD8-09C8-4E96-A252-B975D65C87B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSetCompression", "DataSetCompression\DataSetCompression.csproj", "{424D7EDC-7C8E-4435-AFB8-6D4FB9F5CA09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +33,18 @@ Global
 		{78D4B960-2822-4EDB-8862-1B5DE41AFADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78D4B960-2822-4EDB-8862-1B5DE41AFADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78D4B960-2822-4EDB-8862-1B5DE41AFADF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3FBE734B-FF7C-4F2C-BEAF-A497BB5DB059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FBE734B-FF7C-4F2C-BEAF-A497BB5DB059}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FBE734B-FF7C-4F2C-BEAF-A497BB5DB059}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FBE734B-FF7C-4F2C-BEAF-A497BB5DB059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B23E8B5D-35FD-4197-8E60-6350AD4DCB89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B23E8B5D-35FD-4197-8E60-6350AD4DCB89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B23E8B5D-35FD-4197-8E60-6350AD4DCB89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B23E8B5D-35FD-4197-8E60-6350AD4DCB89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEEF2BD8-09C8-4E96-A252-B975D65C87B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEEF2BD8-09C8-4E96-A252-B975D65C87B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEEF2BD8-09C8-4E96-A252-B975D65C87B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEEF2BD8-09C8-4E96-A252-B975D65C87B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{424D7EDC-7C8E-4435-AFB8-6D4FB9F5CA09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{424D7EDC-7C8E-4435-AFB8-6D4FB9F5CA09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{424D7EDC-7C8E-4435-AFB8-6D4FB9F5CA09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{424D7EDC-7C8E-4435-AFB8-6D4FB9F5CA09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
