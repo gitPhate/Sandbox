@@ -8,11 +8,25 @@ using Kyklos.Kernel.Data.Entities;
 using System.Data;
 using System.Reflection;
 
-var props = typeof(ReportDefectsBoxesImageDbItem).GetOrderedPropertyList();
+FastMemberExtension.TestAnonymousObj();
 var a = true;
 
 public static class FastMemberExtension
 {
+    public static void TestAnonymousObj()
+    {
+var anon = new
+{
+    Prop1 = "a",
+    Prop2 = "b"
+};
+
+MemberSet members =
+    TypeAccessor
+        .Create(anon.GetType())
+        .GetMembers();
+    }
+
     public static Member[] GetOrderedPropertyList(this Type type) =>
         TypeAccessor
             .Create(type)
