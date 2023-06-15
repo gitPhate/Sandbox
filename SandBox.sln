@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XXHashTest", "XXHashTest\XX
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastMemberTest", "FastMemberTest\FastMemberTest.csproj", "{5DEE5124-2011-41A7-B078-380EEB43D5D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiscTests", "MiscTests\MiscTests.csproj", "{F7A3F2A0-4B59-44F3-A994-442FD847AD48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiscTests", "MiscTests\MiscTests.csproj", "{F7A3F2A0-4B59-44F3-A994-442FD847AD48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PollyTests", "PollyTests\PollyTests.csproj", "{61CEC462-70DC-40EC-BE29-1612D969D4A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{F7A3F2A0-4B59-44F3-A994-442FD847AD48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7A3F2A0-4B59-44F3-A994-442FD847AD48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7A3F2A0-4B59-44F3-A994-442FD847AD48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61CEC462-70DC-40EC-BE29-1612D969D4A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61CEC462-70DC-40EC-BE29-1612D969D4A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61CEC462-70DC-40EC-BE29-1612D969D4A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61CEC462-70DC-40EC-BE29-1612D969D4A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
