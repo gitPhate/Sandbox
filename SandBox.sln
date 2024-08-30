@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLTextClassification", "MLT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntivirusPerfTest", "AntivirusPerfTest\AntivirusPerfTest.csproj", "{25219E0C-008F-4B60-AD09-8BC95D6495A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBM.Access", "IBM.Access\IBM.Access.csproj", "{54538C0D-C445-485B-98D7-4B98303FDF1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IBM.Access", "IBM.Access\IBM.Access.csproj", "{54538C0D-C445-485B-98D7-4B98303FDF1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCRTests", "OCRTests\OCRTests.csproj", "{DDFC4AEB-88D9-4315-B203-F0493CF888BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{54538C0D-C445-485B-98D7-4B98303FDF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54538C0D-C445-485B-98D7-4B98303FDF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54538C0D-C445-485B-98D7-4B98303FDF1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDFC4AEB-88D9-4315-B203-F0493CF888BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDFC4AEB-88D9-4315-B203-F0493CF888BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDFC4AEB-88D9-4315-B203-F0493CF888BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDFC4AEB-88D9-4315-B203-F0493CF888BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
