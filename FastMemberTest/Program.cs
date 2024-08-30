@@ -9,10 +9,30 @@ using System.Data;
 using System.Reflection;
 
 FastMemberExtension.TestAnonymousObj();
+FastMemberExtension.TestObjCreation();
 var a = true;
+
+class Obj
+{
+    public int publicField = 1;
+    private int privateField = 2;
+
+    public int PublicProp { get; set; } = 3;
+    private int PrivateProp { get; set; } = 4;
+}
 
 public static class FastMemberExtension
 {
+    public static void TestObjCreation()
+    {
+        Obj o = new Obj();
+        var acc = TypeAccessor.Create(typeof(Obj));
+        acc[o, "publicField"] = 10;
+        acc[o, "privateField"] = 20;
+        acc[o, "PublicProp"] = 30;
+        acc[o, "PrivateProp"] = 40;
+    }
+
     public static void TestAnonymousObj()
     {
 var anon = new
