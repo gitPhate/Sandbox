@@ -1,14 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>net8.0;net6.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <LangVersion>12</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Kyklos.Kernel.Core" Version="2.4.0" />
+    <PackageReference Include="DistributedLock.Postgres" Version="1.2.0" />
+    <PackageReference Include="Kyklos.Kernel.Data.Async.PostgreSQL" Version="2.5.1-beta12" />
+    <PackageReference Include="Kyklos.Kernel.Data.Async.Support" Version="2.5.1-beta12" />
   </ItemGroup>
 
 </Project>
