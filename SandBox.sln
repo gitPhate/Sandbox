@@ -5,8 +5,6 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaStudy", "KafkaStudy\KafkaStudy.csproj", "{E73EB28C-4F86-43D7-82A3-34A0F617E35A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBM.Access", "IBM.Access\IBM.Access.csproj", "{0CE75D65-B2B4-4135-B17E-0F49AEFB5854}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbedioTest", "EmbedioTest\EmbedioTest.csproj", "{78D4B960-2822-4EDB-8862-1B5DE41AFADF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thumbnail", "Thumbnail\Thumbnail.csproj", "{B23E8B5D-35FD-4197-8E60-6350AD4DCB89}"
@@ -25,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PollyTests", "PollyTests\Po
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLTextClassification", "MLTextClassification\MLTextClassification.csproj", "{0B6E2F75-1754-44E3-A478-D252A93D15BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntivirusPerfTest", "AntivirusPerfTest\AntivirusPerfTest.csproj", "{25219E0C-008F-4B60-AD09-8BC95D6495A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntivirusPerfTest", "AntivirusPerfTest\AntivirusPerfTest.csproj", "{25219E0C-008F-4B60-AD09-8BC95D6495A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBM.Access", "IBM.Access\IBM.Access.csproj", "{54538C0D-C445-485B-98D7-4B98303FDF1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,6 @@ Global
 		{E73EB28C-4F86-43D7-82A3-34A0F617E35A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E73EB28C-4F86-43D7-82A3-34A0F617E35A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E73EB28C-4F86-43D7-82A3-34A0F617E35A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0CE75D65-B2B4-4135-B17E-0F49AEFB5854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CE75D65-B2B4-4135-B17E-0F49AEFB5854}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CE75D65-B2B4-4135-B17E-0F49AEFB5854}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CE75D65-B2B4-4135-B17E-0F49AEFB5854}.Release|Any CPU.Build.0 = Release|Any CPU
 		{78D4B960-2822-4EDB-8862-1B5DE41AFADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{78D4B960-2822-4EDB-8862-1B5DE41AFADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78D4B960-2822-4EDB-8862-1B5DE41AFADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -81,6 +77,10 @@ Global
 		{25219E0C-008F-4B60-AD09-8BC95D6495A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25219E0C-008F-4B60-AD09-8BC95D6495A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25219E0C-008F-4B60-AD09-8BC95D6495A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54538C0D-C445-485B-98D7-4B98303FDF1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54538C0D-C445-485B-98D7-4B98303FDF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54538C0D-C445-485B-98D7-4B98303FDF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54538C0D-C445-485B-98D7-4B98303FDF1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
